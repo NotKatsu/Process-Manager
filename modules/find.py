@@ -12,3 +12,8 @@ class find:
         Returns:
             dict[str]: Returns a dict containing information about the process.
         """
+        try:
+            process_result: object = psutil.Process(pid=process_id)
+            
+        except Exception as error:
+            return {"error": error}
